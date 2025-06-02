@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h2>Bind()</h2>
+<p id = "demo1"></p>
+<script>
+    const pessoa1 = {
+        nome: "Matheus",
+        sobrenome: "Oliveira",
+        nomeCompleto: function (){
+            return this.nome + " " + this.sobrenome;
+        }
+    }
+
+    const pessoa2 = {
+        nome: "Miguel",
+        sobrenome: "Augusto"
+    }
+    
+    document.querySelector("#demo1").innerHTML = pessoa1.nomeCompleto.bind(pessoa2)();
+
+</script>
+
+</body>
+</html>

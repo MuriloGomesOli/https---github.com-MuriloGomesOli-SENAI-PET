@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Parametros</h2>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+        const minhaFun1 = (a, b) => {
+            console.log(b);
+            return a * b;
+        }
+        document.querySelector("#demo").innerHTML = minhaFun1 (0,3)
+
+        const minhafun2 = (...args) =>{
+            let soma = 1; //tradicional do JS
+            //for (let i =0; i < args.length; i++){
+            //    soma += arguments[1];
+            
+            for(let arg of args) soma *= arg; //moderna
+            return soma; 
+        }
+
+        document.querySelector("#demo2").innerHTML = minhafun2 (1,3,4)
+
+    </script>
+</body>
+</html>

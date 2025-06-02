@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flechas -> Arrow</title>
+</head>
+<body>
+    <h2>Funções Flechas</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+        const minhaFun1 = function (a, b){
+            return a * b;
+        }
+        const minhafun2 = (a, b) => {
+            if (a > 0){
+                return a + b
+            }
+            return a * b
+        }
+
+        const minhaFun3 = (a, b) => a * b;
+        const minhaFun4 = a => a * a;
+
+        let text = (a => a * a ). toString
+        Document.querySelector("#demo1").innerHTML = texto;
+    </script>
+</body>
+</html>

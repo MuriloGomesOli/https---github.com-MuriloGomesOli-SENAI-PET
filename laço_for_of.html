@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Laço for off</h2>
+    <p>A instrução for of percorre as propriedades de um objeto</p>
+    <p id="demo"></p>
+    <script>
+
+        const pessoa = ["Samuel","couto", 16];
+
+        let texto = " ";
+        for (let x of pessoa){
+            texto += x + " ";
+        }
+
+        document.querySelector("#demo").innerHTML = texto;
+    </script>
+</body>
+</html>

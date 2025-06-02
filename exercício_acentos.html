@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Exercício de Funções em JavaScrpit</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+    <script>
+       function minhaFunc1(a, b){
+        return a * b;
+       } 
+       document.querySelector("#demo1").innerHTML = minhaFunc1(3,4);
+
+       const minhaFunc2 = function (a,b){ //função anonima(é lambida)
+        return a * b;
+       }
+       document.querySelector("#demo2").innerHTML = minhaFunc2(4,5);
+
+       const minhaFunc3 = new Function("a", "b", "return a * b") //pouco usada
+       document.querySelector("#demo3").innerHTML = minhaFunc3(5,6);
+
+       document.querySelector("#demo4").innerHTML = (function (a,b){ return a*b;}) (6,7) //função auto-executavel
+
+       document.querySelector("#demo5").innerHTML = minhaFunc3 (5,6) * 2;
+
+       function minhaFunc6(a,b){
+        return arguments.length;
+       }
+       document.querySelector("#demo6").innerHTML = minhaFunc6(2,6,4,4,2,23,4,2,1,6,54,3,2,5,31)
+
+       let x = 0;
+       let minhaFunc7 = function (a){
+        x = 1; // efeito colateral
+        console.log("Vai Cruzeiro") // efeito colateral
+        let y = prompt("Por Favor, insira seu nome:"); // efeito colateral
+        return a + 2
+
+       }
+
+       let minhafunc8 = function(a,b){
+       return b = 1;
+       }
+
+       x = minhaFunc(2, x);
+    </script>
+</body>
+</html>
