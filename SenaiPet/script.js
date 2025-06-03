@@ -1,70 +1,45 @@
+function Pet(nome, idade, especie) {
+    this.nome = nome;
+    this.idade = idade;
+    this.especie = especie;
  
-        function Pet(nome, especie, idade) {
+    this.falar = function () {
+        return `Oi eu sou o(a) ${this.nome}, e sou um(a) ${this.especie}`;
+    };
  
-            this.nome = nome;
-            this.especie = especie;
-            this.idade = idade;
- 
-            this.idadeHumana = function() {
-                if (this.especie == "cachorro") {
-                    return this.idade * 7
-                }
-                else if (this.especie == "gato") {
-                    return this.idade * 6
-                }
-                else {
-                    return this.idade * 5
-                }
-            };
- 
-            this.som = function (){
-                 if (this.especie === "cachorro") {
-                    return "Au"
-                }
-                else if (this.especie === "gato") {
-                    return "miau"
-                }
-                else {
-                    return "piu"
-                }
-            }
- 
-            this.Apresentacao = function (){
-                return this.som() + " , eu sou " + this.nome + " eu sou um " + this.especie +
-                ".<br>Idade humana de " + this.nome + ": "  + this.idadeHumana();
-            }
- 
-            this.dados = function (){
-                return "nome: " + this.nome + ", Espécie: " + this.especie + ", idade: " + this.idade;
-            }
-            this.pets = function (){
-                return "Pet encontrado: " + this.nome + ", Espécie: " + this.especie + ". idade: " + this.idade;
-            }
- 
+    this.barulho = function () {
+        const especieLower = this.especie.toLowerCase();
+        if (especieLower == "cachorro") {
+            return "AuAu!";
+        } else if (especieLower == "gato") {
+            return "Miau!";
+        } else {
+            return "barulho não identificado";
         }
+    };
  
-    const meusPets = [
-        new Pet("Rex", "Cachorro", 5),
-        new Pet("Mimi", "Gato", 3),
-        new Pet("Pingo", "Coelho", 2)
-    ];
+    this.idadeHumana = function () {
+        const especieLower = this.especie.toLowerCase();
+        if (especieLower === "cachorro") {
+            return this.idade * 7;
+        } else if (especieLower === "gato") {
+            return this.idade * 6;
+        } else {
+            return this.idade * 5;
+        }
+    };
+}
  
-    let resultado = "";
-    meusPets.forEach(pet => {
-        resultado += pet.Apresentacao();
-    });
+const meusPets = [
+    new Pet("Pretinha", 14, "Cachorro"),
+    new Pet("Mia", 8, "Gato"),
+    new Pet("Ricardinho", 3, "Coelho"),
+];
  
-    let resultado1 = "";
-    meusPets.forEach(pet => {
-        resultado1 += pet.dados() + "<br>";
-    });
  
-    let resultado3 = "";
-    meusPets.forEach(pet => {
-        resultado3 += pet.pets();
-    });
-   
-    document.querySelector("#demo1").innerHTML = meusPets[0].Apresentacao();  
-    document.querySelector("#demo2").innerHTML = meusPets[1].pets();
-    document.querySelector("#demo3").innerHTML = resultado1;
-    </script>
+petsAtualizados.forEach(pet => {
+    console.log(pet.falar());
+    console.log(`Idade humana do(a) ${pet.nome}: ${pet.idadeHumana()}`);
+    console.log(`Meu som é: ${pet.barulho()}`);
+    console.log("---------------");
+});

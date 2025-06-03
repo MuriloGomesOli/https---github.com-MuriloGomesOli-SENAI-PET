@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack Functions</title>
+</head>
+<body>
+    <h2>Callback Functions</h2>
+    <p id="demo1"></p>
+    <p id="demo2" style="color: brown;"></p>
+    <script>
+        const visualizar = algo => document.querySelector("#demo1")
+        .innerHTML = algo // tecnica de visualização
+
+        const visualizar_vermelho = algo => document.querySelector("#demo2")
+        .innerHTML = algo
+
+        const calcular = function (num1, num2, visu) {visu(num1+num2)} 
+
+        let resultado = calcular(5,9, visualizar);
+        //visualizar(resultado)
+        //visualizar_vermelho(resultado)
+    </script>
+</body>
+</html>
